@@ -30,10 +30,10 @@ jobs:
         cd `cat /tmp/WLEDtemp/wledfoldername`
         npm install
         echo '[env:custom_build]' >>platformio.ini
-        echo 'extends = env:nodemcuv2' >>platformio.ini
-        echo 'build_flags = ${env:nodemcuv2.build_flags} -D LEDPIN=26 -D I2S_SDPIN=32 -D I2S_WSPIN=22 -D I2S_CKPIN=19 -D DEFAULT_LED_COLOR_ORDER=COL_ORDER_RGB -D CLIENT_SSID='\''"Pixel_3459"'\'' -D CLIENT_PASS='\''"supernova"'\'' -D USERMOD_ROTARY_ENCODER_UI -D USERMOD_MODE_SORT' >>platformio.ini
+        echo 'extends = env:soundReactive_esp32dev' >>platformio.ini
+        echo 'build_flags = ${env:soundReactive_esp32dev.build_flags} -D BTNPIN=26 -D I2S_SDPIN=32 -D I2S_WSPIN=22 -D I2S_CKPIN=19 -D DEFAULT_LED_COUNT=280 -D DEFAULT_LED_COLOR_ORDER= COL_ORDER_RGB -D CLIENT_SSID='\''"Pixel_3459"'\'' -D USERMOD_ROTARY_ENCODER_UI -D USERMOD_MODE_SORT' >>platformio.ini
         echo 'lib_deps = ' >>platformio.ini
-        echo '  ${env:nodemcuv2.lib_deps}' >>platformio.ini
+        echo '  ${env:soundReactive_esp32dev.lib_deps}' >>platformio.ini
         echo '  olikraus/U8g2 @ ^2.28.8' >>platformio.ini
         echo '  Wire' >>platformio.ini
         
